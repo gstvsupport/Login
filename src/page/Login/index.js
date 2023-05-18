@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import User from '../../assets/user.png';
-
+import Banda from '../../assets/banda.png';
 import loginAcess from '../../utils/loginAcess';
-
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -18,20 +16,20 @@ export default function Login() {
       password
     }
 
-    if ( data.email === loginAcess.email && data.password === loginAcess.password){
-      alert(`Access Released `+ data.email);
+    if (data.email === loginAcess.email && data.password === loginAcess.password) {
+      alert(`Access Released ` + data.email);
     } else {
       alert("Access Denied, Sign Up")
     }
   }
   return (
     <div className="logon-container" >
+      <div className='banda'>
+        <img src={Banda} />
+      </div>
       <section className="form">
-        <img src={User} alt="user"/>
-
+        <h1>LOGIN</h1>
         <form onSubmit={handleSubmit}>
-          <h1>
-          </h1>
           <input
             type="email"
             placeholder="E-mail: "
@@ -40,8 +38,6 @@ export default function Login() {
             onChange={event => setEmail(event.target.value)}
             required
           />
-          <h1>
-          </h1>
           <input
             type="password"
             placeholder="Senha"
@@ -51,11 +47,9 @@ export default function Login() {
             required
           />
           <div className='footer'>
-            <a href="/" className="ultimo">Cadastrar</a>
-
-            <a href="/" className="ultimo">Esqueci a senha</a>
+            <Link className="button" type="submit" to="/cadastro">Entrar</Link>
           </div>
-            <button className="button" type="submit">Login</button>
+            <a href="/" className="ultimo">Não tem cadastro? Cadastrar</a>
         </form>
 
       </section>
