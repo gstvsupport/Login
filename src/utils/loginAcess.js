@@ -1,6 +1,6 @@
 const loginAcess = {
-  email: "admin.com@admin.br",
-  password: "123456"
+  email: "foo@gmail.com",
+  password: "foo"
 }
 
 export default loginAcess;
