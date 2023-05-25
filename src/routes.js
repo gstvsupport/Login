@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './page/Login';
-import CadastroWho from './page/CadastroWho';
 import Espectador from './page/Espectador';
 import Artista from './page/Artista';
+import Home from './page/Home';
 
-function App() {
+function AppRoutes() {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<Login />}/>
-        <Route exact path="/cadastro" element={<CadastroWho />}/>
+        <Route exact path="/home" element={<Home />}/>
         <Route exact path="/espectador" element={<Espectador />}/>
         <Route exact path="/artista" element={<Artista />}/>
       </Routes>
@@ -18,4 +18,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppRoutes;

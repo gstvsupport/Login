@@ -47,7 +47,7 @@ export default function Login() {
             required
           />
           <div className='footer'>
-            <Link className="button" type="submit" to="/cadastro">Entrar</Link>
+            <Link className="button" type="submit" to="/home">Entrar</Link>
           </div>
             <a href="/" className="ultimo">Não tem cadastro? Cadastrar</a>
         </form>
